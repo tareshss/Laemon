@@ -1,4 +1,4 @@
-﻿var interval = 10; // 5 mins
+﻿var interval = 150; // mins
 
 function openLinkedIn() {
     chrome.tabs.create({ url: "https://www.linkedin.com", active: true });
@@ -13,9 +13,16 @@ function getMessageCount(callback) {
     );
 }
 
-
 function setBrowserIconCountAndShowUserMessage(result) {
+    setBrowserIcon(result);
+    showUserMessage();
+};
+
+function setBrowserIcon(result) {
     chrome.browserAction.setBadgeText({ text: result });
+}
+
+function showUserMessage() {
     var opt = {
         type: "basic",
         title: "New Message",
@@ -24,54 +31,16 @@ function setBrowserIconCountAndShowUserMessage(result) {
         priority: 0
     }
     chrome.notifications.create('new message', opt);
-};
+}
 
 function checkLinkedIn() {
-    $.get("https://www.linkedin.com/inbox/summary",
-        function (data) {
-//            var topBar = $(data).find("#top-header").find("#account-nav").html();
-//                        console.log(topBar);
-            var count = $(data).find("span.message-count").text();
-//                .find("#top-header")
-//                .find("#account-nav")
-//                .find('li[data-li-activity-type="messages"]')
-//                                .attr("data-li-new-count");
-//                .find("#header-messages-count")
-//                .html();
-//                .find("#header-messages-count")
-//                .text();
-//                .find("span.message-count")
-            //                .text();
-            //            console.log(topBar);
-//            console.log(data);
-//            console.log(count);
-            
-            // Check if value is integer?
-            // Check if valid value i.e > 0 and < 9999
-            chrome.browserAction.setBadgeText({ text: count });
-            var opt = {
-                type: "basic",
-                title: "New Message",
-                message: "You have a new Message",
-                iconUrl: "../img/icon.png",
-                priority: 0
-            }
-            chrome.notifications.create('new message', opt);
-        });
-//    $.ajax({
-//        url: "https://www.linkedin.com/",
-//        type: 'GET',
-//        success: function (data) {
-//            console.log(data);
-//        }
-//    });
-
+    getMessageCount(setBrowserIconCountAndShowUserMessage);
 };
 
- //Checkmail (without notification?) and set default options to local storage
- //chrome.storage.local.clear();
+ //Checkmail (without notification?) and set box, options? to local storage
 function fn60sec() {
     getMessageCount(setBrowserIconCountAndShowUserMessage);
 }
 
+getMessageCount(setBrowserIconCountAndShowUserMessage);
 setInterval(fn60sec, interval * 60 * 1000);

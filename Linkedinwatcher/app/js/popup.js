@@ -77,19 +77,14 @@
 //  }
 //};
 
-// Run our kitten generation script as soon as the document's DOM is ready.
+// Run script as soon as the document's DOM is ready.
 document.addEventListener('DOMContentLoaded', function () {
-    //  kittenGenerator.requestKittens();
     chrome.runtime.getBackgroundPage(function (backgroundPage) {
-        $("#openLinkedIn").on("click",function (event) {
+        $("#openLinkedIn").on("click",function () {
             backgroundPage.openLinkedIn();
             window.close();
         });
-//        document.getElementById("openLinkedIn").addEventListener("click", function (event) {
-//            backgroundPage.openLinkedIn();
-//            window.close();
-        //        });
-        $("#checkLinkedIn").on("click", function (event) {
+        $("#checkLinkedIn").on("click", function () {
             backgroundPage.checkLinkedIn();
             window.close();
         });
