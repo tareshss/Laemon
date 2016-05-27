@@ -1,4 +1,4 @@
-﻿var interval = 5; // 5 mins
+﻿var interval = 10; // 5 mins
 
 function openLinkedIn() {
     chrome.tabs.create({ url: "https://www.linkedin.com", active: true });

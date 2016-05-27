@@ -45,6 +45,7 @@
     <Content Include="app\css\bootstrap.min.css" />
     <Content Include="app\css\font-awesome.css" />
     <Content Include="app\css\font-awesome.min.css" />
+    <Content Include="app\css\popup.css" />
     <Content Include="app\fonts\fontawesome-webfont.svg" />
     <Content Include="app\img\glyphicons-halflings-white.png" />
     <Content Include="app\img\glyphicons-halflings.png" />

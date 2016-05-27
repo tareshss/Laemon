@@ -1,0 +1,22 @@
+﻿body {
+    background-color: #0077B5;
+    border:2px solid #b2bac1;
+    border-radius:2px;
+    width: 110px;
+}
+
+.btn {
+    white-space: nowrap;
+}
+
+.lm-margin-top-5 {
+    margin-top:5px;
+}
+
+.lm-margin-bottom-5 {
+    margin-bottom:5px;
+}
+
+.lm-margin-top-10 {
+    margin-top:10px;
+}
