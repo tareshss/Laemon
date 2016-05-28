@@ -1,46 +1,49 @@
-﻿var interval = 150; // mins
+﻿var interval = 5; // mins
 
 function openLinkedIn() {
     chrome.tabs.create({ url: "https://www.linkedin.com", active: true });
 };
 
-function getMessageCount(callback) {
+function getMessageCount(callback, showNotifcation) {
     $.get("https://www.linkedin.com/inbox/summary",
         function(data) {
             var count = $(data).find("span.message-count").text();
-            callback(count);
+            callback(count, showNotifcation);
         }
     );
 }
 
-function setBrowserIconCountAndShowUserMessage(result) {
+function setBrowserIconCountAndShowUserMessage(result, showNotifcation) {
     setBrowserIcon(result);
-    showUserMessage();
+    if (showNotifcation === 1 && result > 0)
+        showUserMessage(result);
 };
 
 function setBrowserIcon(result) {
-    chrome.browserAction.setBadgeText({ text: result });
+        var badgeText = (result > 0) ? result : "";
+        chrome.browserAction.setBadgeText({ text: badgeText });
 }
 
-function showUserMessage() {
+function showUserMessage(result) {
+    var addPlural = (result === "1") ? "" : "s";
     var opt = {
         type: "basic",
-        title: "New Message",
-        message: "You have a new Message",
+        title: "Laemon, notifier for LinkedIn™",
+        message: "You have " + result + " New Message" + addPlural,
         iconUrl: "../img/icon.png",
         priority: 0
     }
-    chrome.notifications.create('new message', opt);
+    chrome.notifications.create("new message", opt);
 }
 
 function checkLinkedIn() {
-    getMessageCount(setBrowserIconCountAndShowUserMessage);
+    getMessageCount(setBrowserIconCountAndShowUserMessage,1);
 };
 
  //Checkmail (without notification?) and set box, options? to local storage
-function fn60sec() {
-    getMessageCount(setBrowserIconCountAndShowUserMessage);
+function fnInterval() {
+    getMessageCount(setBrowserIconCountAndShowUserMessage, 1);
 }
 
-getMessageCount(setBrowserIconCountAndShowUserMessage);
-setInterval(fn60sec, interval * 60 * 1000);
+getMessageCount(setBrowserIconCountAndShowUserMessage, 0);
+setInterval(fnInterval, interval * 60 * 1000);
