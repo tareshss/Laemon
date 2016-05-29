@@ -39,22 +39,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app\css\bootstrap-responsive.css" />
-    <Content Include="app\css\bootstrap-responsive.min.css" />
-    <Content Include="app\css\bootstrap.css" />
-    <Content Include="app\css\bootstrap.min.css" />
-    <Content Include="app\css\font-awesome.css" />
-    <Content Include="app\css\font-awesome.min.css" />
     <Content Include="app\css\popup.css" />
-    <Content Include="app\fonts\fontawesome-webfont.svg" />
     <Content Include="app\img\glyphicons-halflings-white.png" />
     <Content Include="app\img\glyphicons-halflings.png" />
     <Content Include="app\img\icon.png" />
     <Content Include="app\img\icon_offline.png" />
     <Content Include="app\js\background.js" />
     <Content Include="app\html\popup.html" />
-    <Content Include="app\js\bootstrap.js" />
-    <Content Include="app\js\bootstrap.min.js" />
     <Content Include="app\js\jquery-2.2.3.js" />
     <Content Include="app\js\jquery-2.2.3.min.js" />
     <Content Include="app\js\popup.js" />
@@ -64,11 +55,6 @@
     <Content Include="index.htm" />
     <Content Include="Properties\build\ligershark.chrome.targets" />
     <Content Include="screenshots\readme.txt" />
-    <Content Include="app\fonts\fontawesome-webfont.eot" />
-    <Content Include="app\fonts\fontawesome-webfont.ttf" />
-    <Content Include="app\fonts\fontawesome-webfont.woff" />
-    <Content Include="app\fonts\fontawesome-webfont.woff2" />
-    <Content Include="app\fonts\FontAwesome.otf" />
     <None Include="scripts\_references.js" />
     <None Include="scripts\chrome-api-vsdoc.js" />
   </ItemGroup>
