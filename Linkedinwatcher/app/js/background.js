@@ -4,11 +4,23 @@ function openLinkedIn() {
     chrome.tabs.create({ url: "https://www.linkedin.com", active: true });
 };
 
+function setOfflineIcon() {
+    chrome.browserAction.setIcon({
+        path: "img/icon_offline.png"
+    });
+    chrome.browserAction.setBadgeText({ text: "" });
+}
+
 function getMessageCount(callback, showNotifcation) {
     $.get("https://www.linkedin.com/inbox/summary",
         function(data) {
             var count = $(data).find("span.message-count").text();
-            callback(count, showNotifcation);
+            if (count.length > 0 || (Math.floor(count) === count && $.isNumeric(count))) {
+                callback(count, showNotifcation);
+            }
+            else {
+                setOfflineIcon();
+            }
         }
     );
 }
@@ -20,8 +32,11 @@ function setBrowserIconCountAndShowUserMessage(result, showNotifcation) {
 };
 
 function setBrowserIcon(result) {
-        var badgeText = (result > 0) ? result : "";
-        chrome.browserAction.setBadgeText({ text: badgeText });
+    var badgeText = (result > 0) ? result : "";
+    chrome.browserAction.setIcon({
+        path: "img/icon.png"
+    });
+    chrome.browserAction.setBadgeText({ text: badgeText });
 }
 
 function showUserMessage(result) {
@@ -37,7 +52,7 @@ function showUserMessage(result) {
 }
 
 function checkLinkedIn() {
-    getMessageCount(setBrowserIconCountAndShowUserMessage,1);
+    getMessageCount(setBrowserIconCountAndShowUserMessage, 1);
 };
 
  //Checkmail (without notification?) and set box, options? to local storage

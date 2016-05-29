@@ -7,9 +7,9 @@
     "default_icon": "img/icon.png",
     "default_popup": "html/popup.html"
   },
-  "description": "Watcher Extension for Linkedin",
+  "description": "Message Notification Extension for LinkedIn",
   "manifest_version": 2,
-  "name": "Leamon, a messege notifier for Linkedin",
+  "name": "Leamon, a message notifier for LinkedIn",
   "permissions": [
     "*://*.linkedin.com/",
     "notifications",
