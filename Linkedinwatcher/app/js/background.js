@@ -60,8 +60,12 @@ function fnInterval() {
     getMessageCount(setBrowserIconCountAndShowUserMessage, 1);
 }
 
-getMessageCount(setBrowserIconCountAndShowUserMessage, 0);
-setInterval(fnInterval, interval * 60 * 1000);
-chrome.notifications.onClicked.addListener(function () {
-    openLinkedIn();
-});
+function Main() {
+    getMessageCount(setBrowserIconCountAndShowUserMessage, 0);
+    setInterval(fnInterval, interval * 60 * 1000);
+    chrome.notifications.onClicked.addListener(function() {
+        openLinkedIn();
+    });
+}
+
+Main();
