@@ -8,12 +8,12 @@ body {
     background-color: #F1F1F1;
     border:2px solid #b2bac1;
     border-radius:2px;
-    width: 145px;
+    width: 160px;
     font-family: Georgia;
     margin: 0;
     font-size: 14px;
     color: #333;
-    padding-right: 8px;
+    padding-right: 10px;
     padding-left: 10px;
     padding-top: 0;
 }
@@ -21,13 +21,12 @@ body {
 div.lm-row {
     -webkit-transition: all 150ms linear;
     -moz-transition: all 150ms linear;
-    transition: all 150ms linear
-}
+    transition: all 150ms linear}
 
 div.lm-row {
     padding: 10px 0;
     text-decoration: none;
-    line-height: 20px;
+   
     text-shadow: 5px 5px 0 rgba(0,0,0,.05);
     border-bottom: 1px solid #eee;
     cursor:pointer;

@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app\css\fontello-codes.css" />
+    <Content Include="app\css\fontello-embedded.css" />
+    <Content Include="app\css\fontello.css" />
     <Content Include="app\css\popup.css" />
     <Content Include="app\img\glyphicons-halflings-white.png" />
     <Content Include="app\img\glyphicons-halflings.png" />
@@ -89,7 +92,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-	  <UserProperties app_4manifest_1json__JSONSchema="http://json.schemastore.org/chrome-manifest" />
+      <UserProperties app_4manifest_1json__JSONSchema="http://json.schemastore.org/chrome-manifest" />
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
