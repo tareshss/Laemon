@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
             backgroundPage.openLinkedIn();
             window.close();
         });
-        $("#checkLinkedIn").on("click", function () {
+        $("#checkMessages").on("click", function () {
             backgroundPage.checkLinkedIn();
             window.close();
         });

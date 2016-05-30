@@ -8,35 +8,32 @@ body {
     background-color: #F1F1F1;
     border:2px solid #b2bac1;
     border-radius:2px;
-    width: 155px;
+    width: 145px;
     font-family: Georgia;
     margin: 0;
-    font-size: 13px;
-    line-height: 20px;
+    font-size: 14px;
     color: #333;
-    padding-right: 5px;
+    padding-right: 8px;
     padding-left: 10px;
     padding-top: 0;
 }
 
-a {
+div.lm-row {
     -webkit-transition: all 150ms linear;
     -moz-transition: all 150ms linear;
     transition: all 150ms linear
 }
 
-a {
-    display: block;
+div.lm-row {
     padding: 10px 0;
-    font-size: 18px;
     text-decoration: none;
-    line-height: 30px;
+    line-height: 20px;
     text-shadow: 5px 5px 0 rgba(0,0,0,.05);
     border-bottom: 1px solid #eee;
     cursor:pointer;
 }
 
-a {
+div.lm-row {
     white-space: nowrap;
 }
 
@@ -48,8 +45,12 @@ a {
     margin-bottom:5px;
 }
 
-a:hover {
+div.lm-row:hover {
     padding-left: 15px;
     color: #FFF;
     background: #0077B5;
+}
+
+.lm-item-large {
+    font-size: 15px;
 }

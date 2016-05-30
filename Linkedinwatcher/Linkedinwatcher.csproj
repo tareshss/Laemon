@@ -44,6 +44,9 @@
     <Content Include="app\img\glyphicons-halflings.png" />
     <Content Include="app\img\icon.png" />
     <Content Include="app\img\icon_offline.png" />
+    <Content Include="app\img\zocial-email_128_3_0077b5_none.png" />
+    <Content Include="app\img\zocial-email_16_3_0077b5_none.png" />
+    <Content Include="app\img\zocial-email_48_3_0077b5_none.png" />
     <Content Include="app\js\background.js" />
     <Content Include="app\html\popup.html" />
     <Content Include="app\js\jquery-2.2.3.js" />
@@ -86,6 +89,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+	  <UserProperties app_4manifest_1json__JSONSchema="http://json.schemastore.org/chrome-manifest" />
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>

@@ -8,6 +8,11 @@
     "default_popup": "html/popup.html"
   },
   "description": "Message Notification Extension for LinkedIn",
+  "icons": {
+    "16": "img/zocial-email_16_3_0077b5_none.png",
+    "48": "img/zocial-email_48_3_0077b5_none.png",
+    "128": "img/zocial-email_128_3_0077b5_none.png"
+  },
   "manifest_version": 2,
   "name": "Leamon, a message notifier for LinkedIn",
   "permissions": [
@@ -15,8 +20,7 @@
     "notifications",
     "tabs",
     "storage",
-    "unlimitedStorage",
-    "notifications"
+    "unlimitedStorage"
   ],
   "version": "1.0"
 }
