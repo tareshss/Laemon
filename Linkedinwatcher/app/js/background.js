@@ -35,7 +35,7 @@ function getMessageCount(callback, showNotifcation) {
 
 function setBrowserIconCountAndShowUserMessage(result, showNotifcation) {
     setBrowserIcon(result);
-    if (showNotifcation === 1 && result > 0)
+    if (showNotifcation && result > 0)
         showUserMessage(result);
 };
 
@@ -60,16 +60,16 @@ function showUserMessage(result) {
 }
 
 function checkLinkedIn() {
-    getMessageCount(setBrowserIconCountAndShowUserMessage, 1);
+    getMessageCount(setBrowserIconCountAndShowUserMessage, true);
 };
 
  //Checkmail (without notification?) and set box, options? to local storage
 function fnInterval() {
-    getMessageCount(setBrowserIconCountAndShowUserMessage, 1);
+    getMessageCount(setBrowserIconCountAndShowUserMessage, true);
 }
 
 function Main() {
-    getMessageCount(setBrowserIconCountAndShowUserMessage, 0);
+    getMessageCount(setBrowserIconCountAndShowUserMessage, false);
     setInterval(fnInterval, interval * 60 * 1000);
     chrome.notifications.onClicked.addListener(function() {
         openLinkedIn();
