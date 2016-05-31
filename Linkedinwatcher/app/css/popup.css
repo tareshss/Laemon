@@ -2,16 +2,14 @@
     font-size: 100%;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    display: block;
 }
 body {
     background-color: #F1F1F1;
     border:2px solid #b2bac1;
     border-radius:2px;
-    width: 160px;
+    width: 140px;
     font-family: Georgia;
     margin: 0;
-    font-size: 14px;
     color: #333;
     padding-right: 10px;
     padding-left: 10px;
@@ -21,19 +19,19 @@ body {
 div.lm-row {
     -webkit-transition: all 150ms linear;
     -moz-transition: all 150ms linear;
-    transition: all 150ms linear}
-
-div.lm-row {
+    transition: all 150ms linear;
     padding: 10px 0;
     text-decoration: none;
-   
     text-shadow: 5px 5px 0 rgba(0,0,0,.05);
     border-bottom: 1px solid #eee;
     cursor:pointer;
+    white-space: nowrap;
 }
 
-div.lm-row {
-    white-space: nowrap;
+div.lm-row:hover {
+    padding-left: 15px;
+    color: #FFF;
+    background: #0077B5;
 }
 
 .lm-margin-top-5 {
@@ -44,12 +42,6 @@ div.lm-row {
     margin-bottom:5px;
 }
 
-div.lm-row:hover {
-    padding-left: 15px;
-    color: #FFF;
-    background: #0077B5;
-}
-
 .lm-item-large {
-    font-size: 15px;
+    font-size: 13px;
 }
