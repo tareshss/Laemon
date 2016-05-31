@@ -1,7 +1,5 @@
 ﻿html {
     font-size: 100%;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
 }
 body {
     background-color: #F1F1F1;
@@ -17,8 +15,6 @@ body {
 }
 
 div.lm-row {
-    -webkit-transition: all 150ms linear;
-    -moz-transition: all 150ms linear;
     transition: all 150ms linear;
     padding: 10px 0;
     text-decoration: none;

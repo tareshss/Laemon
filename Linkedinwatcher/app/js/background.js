@@ -5,6 +5,10 @@ var offineIcon = "../img/icon_offline.png";
 var updateUrl = "/inbox/summary";
 var messageId = "span.message-count";
 
+function openTab(url, active) {
+    chrome.tabs.create({url ,active });
+}
+
 function getLinkedInUrl() {
     return "https://www.linkedin.com";
 }
@@ -14,7 +18,7 @@ function getSummaryUrl() {
 }
 
 function openLinkedIn() {
-    chrome.tabs.create({ url: getLinkedInUrl(), active: true });
+    openTab(getLinkedInUrl(), true);
 };
 
 function setOfflineIcon() {
@@ -26,7 +30,7 @@ function setOfflineIcon() {
 
 function getMessageCount(callback, showNotifcation) {
     $.get(getSummaryUrl(),
-        function(data) {
+        function (data) {
             var count = $(data).find(messageId).text();
             if (count.length > 0 || (Math.floor(count) === count && $.isNumeric(count))) {
                 callback(count, showNotifcation);
@@ -68,7 +72,7 @@ function checkLinkedIn() {
     getMessageCount(setBrowserIconCountAndShowUserMessage, true);
 };
 
- //Checkmail (without notification?) and set box, options? to local storage
+//Checkmail (without notification?) and set box, options? to local storage
 function fnInterval() {
     getMessageCount(setBrowserIconCountAndShowUserMessage, true);
 }
@@ -76,7 +80,7 @@ function fnInterval() {
 function Main() {
     getMessageCount(setBrowserIconCountAndShowUserMessage, false);
     setInterval(fnInterval, interval * 60 * 1000);
-    chrome.notifications.onClicked.addListener(function() {
+    chrome.notifications.onClicked.addListener(function () {
         openLinkedIn();
     });
 }

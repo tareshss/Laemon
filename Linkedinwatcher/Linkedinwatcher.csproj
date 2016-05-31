@@ -43,6 +43,8 @@
     <Content Include="app\css\fontello-embedded.css" />
     <Content Include="app\css\fontello.css" />
     <Content Include="app\css\popup.css" />
+    <Content Include="app\html\about.html" />
+    <Content Include="app\html\settings.html" />
     <Content Include="app\img\glyphicons-halflings-white.png" />
     <Content Include="app\img\glyphicons-halflings.png" />
     <Content Include="app\img\icon.png" />
