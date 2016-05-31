@@ -1,11 +1,16 @@
 ﻿var interval = 15; // mins
+var extIcon = "../img/icon.png";
+var notificationIcon = "../img/icon.png";
+var offineIcon = "../img/icon_offline.png";
+var updateUrl = "/inbox/summary";
+var messageId = "span.message-count";
 
 function getLinkedInUrl() {
     return "https://www.linkedin.com";
 }
 
 function getSummaryUrl() {
-    return getLinkedInUrl() + "/inbox/summary";
+    return getLinkedInUrl() + updateUrl;
 }
 
 function openLinkedIn() {
@@ -14,7 +19,7 @@ function openLinkedIn() {
 
 function setOfflineIcon() {
     chrome.browserAction.setIcon({
-        path: "img/icon_offline.png"
+        path: offineIcon
     });
     chrome.browserAction.setBadgeText({ text: "" });
 }
@@ -22,7 +27,7 @@ function setOfflineIcon() {
 function getMessageCount(callback, showNotifcation) {
     $.get(getSummaryUrl(),
         function(data) {
-            var count = $(data).find("span.message-count").text();
+            var count = $(data).find(messageId).text();
             if (count.length > 0 || (Math.floor(count) === count && $.isNumeric(count))) {
                 callback(count, showNotifcation);
             }
@@ -42,7 +47,7 @@ function setBrowserIconCountAndShowUserMessage(result, showNotifcation) {
 function setBrowserIcon(result) {
     var badgeText = (result > 0) ? result : "";
     chrome.browserAction.setIcon({
-        path: "img/icon.png"
+        path: extIcon
     });
     chrome.browserAction.setBadgeText({ text: badgeText });
 }
@@ -51,9 +56,9 @@ function showUserMessage(result) {
     var addPlural = (result === "1") ? "" : "s";
     var opt = {
         type: "basic",
-        title: "Laemon, notifier for LinkedIn™",
+        title: chrome.i18n.getMessage("name"),
         message: "You have " + result + " New Message" + addPlural,
-        iconUrl: "../img/icon.png",
+        iconUrl: notificationIcon,
         priority: 0
     }
     chrome.notifications.create("new message", opt);
