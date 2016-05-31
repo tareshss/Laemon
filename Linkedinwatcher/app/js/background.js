@@ -1,7 +1,15 @@
 ﻿var interval = 15; // mins
 
+function getLinkedInUrl() {
+    return "https://www.linkedin.com";
+}
+
+function getSummaryUrl() {
+    return getLinkedInUrl() + "/inbox/summary";
+}
+
 function openLinkedIn() {
-    chrome.tabs.create({ url: "https://www.linkedin.com", active: true });
+    chrome.tabs.create({ url: getLinkedInUrl(), active: true });
 };
 
 function setOfflineIcon() {
@@ -12,7 +20,7 @@ function setOfflineIcon() {
 }
 
 function getMessageCount(callback, showNotifcation) {
-    $.get("https://www.linkedin.com/inbox/summary",
+    $.get(getSummaryUrl(),
         function(data) {
             var count = $(data).find("span.message-count").text();
             if (count.length > 0 || (Math.floor(count) === count && $.isNumeric(count))) {

@@ -7,7 +7,7 @@ body {
     background-color: #F1F1F1;
     border:2px solid #b2bac1;
     border-radius:2px;
-    width: 140px;
+    width: 142px;
     font-family: Georgia;
     margin: 0;
     color: #333;
@@ -33,7 +33,7 @@ div.lm-row:hover {
     color: #FFF;
     background: #0077B5;
 }
-
+ 
 .lm-margin-top-5 {
     margin-top:5px;
 }
