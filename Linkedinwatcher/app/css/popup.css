@@ -2,16 +2,9 @@
     font-size: 100%;
 }
 body {
-    background-color: #F1F1F1;
-    border:2px solid #b2bac1;
-    border-radius:2px;
-    width: 142px;
     font-family: Georgia;
     margin: 0;
     color: #333;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-top: 0;
 }
 
 div.lm-row {
@@ -40,4 +33,14 @@ div.lm-row:hover {
 
 .lm-item-large {
     font-size: 13px;
+}
+
+body.popup {
+    background-color: #F1F1F1;
+    border:2px solid #b2bac1;
+    border-radius:2px;
+    width: 142px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 0;
 }

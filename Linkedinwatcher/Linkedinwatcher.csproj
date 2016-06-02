@@ -39,6 +39,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app\css\bootstrap\bootstrap.min.css" />
     <Content Include="app\css\fontello-codes.css" />
     <Content Include="app\css\fontello-embedded.css" />
     <Content Include="app\css\fontello.css" />
@@ -54,6 +55,7 @@
     <Content Include="app\img\zocial-email_48_3_0077b5_none.png" />
     <Content Include="app\js\background.js" />
     <Content Include="app\html\popup.html" />
+    <Content Include="app\js\bootstrap\bootstrap.min.js" />
     <Content Include="app\js\jquery-2.2.3.js" />
     <Content Include="app\js\jquery-2.2.3.min.js" />
     <Content Include="app\js\popup.js" />

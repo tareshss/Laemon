@@ -1,5 +1,4 @@
 
-"use strict";
 $(function () {
     chrome.runtime.getBackgroundPage(function (backgroundPage) {
         $("#openLinkedIn")
