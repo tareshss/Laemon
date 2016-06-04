@@ -39,6 +39,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app\css\about.css" />
     <Content Include="app\css\bootstrap\bootstrap.min.css" />
     <Content Include="app\css\fontello-codes.css" />
     <Content Include="app\css\fontello-embedded.css" />
