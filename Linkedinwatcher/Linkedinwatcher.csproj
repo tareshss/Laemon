@@ -118,4 +118,5 @@
     <LigerSharkChromeTargetsPath>$(BuildFolder)\ligershark.chrome.targets</LigerSharkChromeTargetsPath>
   </PropertyGroup>
   <Import Project="$(LigerSharkChromeTargetsPath)" Condition="Exists($(LigerSharkChromeTargetsPath))" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
