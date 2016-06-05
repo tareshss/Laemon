@@ -69,17 +69,23 @@ function showUserMessage(result) {
 }
 
 function checkLinkedIn() {
-    getMessageCount(setBrowserIconCountAndShowUserMessage, true);
+    chrome.storage.sync.get({ notification: true },
+       function (data) {
+           getMessageCount(setBrowserIconCountAndShowUserMessage, data.notification);
+       });
+ 
 };
 
-//Checkmail (without notification?) and set box, options? to local storage
-function fnInterval() {
-    getMessageCount(setBrowserIconCountAndShowUserMessage, true);
+function loop() {
+    chrome.storage.sync.get({ notification: true },
+        function (data) {
+            getMessageCount(setBrowserIconCountAndShowUserMessage, data.notification);
+            setTimeout(loop, interval * 60 * 1000);
+        });
 }
 
 function Main() {
-    getMessageCount(setBrowserIconCountAndShowUserMessage, false);
-    setInterval(fnInterval, interval * 60 * 1000);
+    loop();
     chrome.notifications.onClicked.addListener(function () {
         openLinkedIn();
     });
