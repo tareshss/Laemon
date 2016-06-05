@@ -13,10 +13,17 @@ $(function () {
                     backgroundPage.checkLinkedIn();
                     window.close();
                 });
-        $("#settings")
+        $("#options")
             .on("click",
                 function () {
-                    backgroundPage.openTab("../html/settings.html", true);
+                    if (chrome.runtime.openOptionsPage) {
+                        // New way to open options pages, if supported (Chrome 42+).
+                        chrome.runtime.openOptionsPage();
+                    } else {
+                        // Reasonable fallback.
+                        window.open(chrome.runtime.getURL('../html/options.html'));
+                    }
+                    backgroundPage.openTab("../html/options.html", true);
                 });
         $("#about")
             .on("click",

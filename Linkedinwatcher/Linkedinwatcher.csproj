@@ -47,7 +47,7 @@
     <Content Include="app\css\fontello.css" />
     <Content Include="app\css\popup.css" />
     <Content Include="app\html\about.html" />
-    <Content Include="app\html\settings.html" />
+    <Content Include="app\html\options.html" />
     <Content Include="app\img\glyphicons-halflings-white.png" />
     <Content Include="app\img\glyphicons-halflings.png" />
     <Content Include="app\img\icon.png" />
@@ -62,7 +62,7 @@
     <Content Include="app\js\jquery-2.2.3.js" />
     <Content Include="app\js\jquery-2.2.3.min.js" />
     <Content Include="app\js\popup.js" />
-    <Content Include="app\js\settings.js" />
+    <Content Include="app\js\options.js" />
     <Content Include="Properties\build\lib\Ionic.Zip.DLL" />
     <Content Include="Properties\build\lib\MSBuild.ExtensionPack.dll" />
     <Content Include="screenshots\screenshot.png" />
