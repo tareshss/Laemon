@@ -8,19 +8,19 @@ $(function () {
         tooltip: 'always',
         min: 1,
         max: 200,
-    scale: 'logarithmic',
-    step: 1
+        scale: 'logarithmic',
+        step: 1
     });
 
     $("#enableNotification").change(function () {
         var isEnabled = $(this).is(":checked");
-        chrome.storage.sync.set({ notification: isEnabled, noop });
+        chrome.storage.sync.set({ notification: isEnabled });
     });
 
     $("#interval")
-        .on("change",function(obj) {
-            var interval = obj.value.newValue;
-            chrome.storage.sync.set({ interval: interval, noop });
+        .on("slideStop", function (obj) {
+            var interval = obj.value;
+            chrome.storage.sync.set({ interval: interval });
         });
     setPreferences();
 });
@@ -28,6 +28,7 @@ $(function () {
 function setPreferences() {
     chrome.storage.sync.get({ notification: true, interval: 5 }, function (data) {
         $("#enableNotification").prop("checked", data.notification);
+        //        $("#interval").slider("setValue", data.interval);
         $("#interval").slider("setValue", data.interval);
     });
 }
