@@ -1,9 +1,9 @@
-﻿var interval = 15; // mins
-var extIcon = "../img/icon.png";
+﻿var extIcon = "../img/icon.png";
 var notificationIcon = "../img/icon.png";
 var offineIcon = "../img/icon_offline.png";
 var updateUrl = "/inbox/summary";
 var messageId = "span.message-count";
+var myVar;
 
 function openTab(url, active) {
     chrome.tabs.create({url ,active });
@@ -69,25 +69,53 @@ function showUserMessage(result) {
 }
 
 function checkLinkedIn() {
-    chrome.storage.sync.get({ notification: true },
+    chrome.storage.sync.get({ notification: true},
        function (data) {
            getMessageCount(setBrowserIconCountAndShowUserMessage, data.notification);
        });
  
 };
 
-function loop() {
-    chrome.storage.sync.get({ notification: true },
+function initialize(showNotification) {
+    chrome.storage.sync.get({ notification: true, interval: 5},
         function (data) {
-            getMessageCount(setBrowserIconCountAndShowUserMessage, data.notification);
-            setTimeout(loop, interval * 60 * 1000);
+            if (showNotification) {
+                getMessageCount(setBrowserIconCountAndShowUserMessage, data.notification);
+            } else {
+                getMessageCount(setBrowserIconCountAndShowUserMessage, showNotification);
+            }
+            myVar = setTimeout(function () { initialize(showNotification); }, data.interval * 60 * 1000);
+        });
+}
+
+function resetInterval() {
+    chrome.storage.sync.get({interval: 5 },
+        function (data) {
+            myVar = setTimeout(resetInterval, data.interval * 60 * 1000);
         });
 }
 
 function Main() {
-    loop();
+    initialize(true);
     chrome.notifications.onClicked.addListener(function () {
         openLinkedIn();
+    });
+    chrome.storage.onChanged.addListener(function(changes, namespace) {
+        for (key in changes) {
+//            var storageChange = changes[key];
+            if (key === "interval") {
+                clearTimeout(myVar);
+                initialize(false);
+                //change setnewTimeout without check
+
+            }
+//            console.log('Storage key "%s" in namespace "%s" changed. ' +
+//                     'Old value was "%s", new value is "%s".',
+//                     key,
+//                     namespace,
+//                     storageChange.oldValue,
+//                     storageChange.newValue);
+        }
     });
 }
 

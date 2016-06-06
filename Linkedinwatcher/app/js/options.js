@@ -1,19 +1,33 @@
 ﻿var noop = function () { }; // do nothing.
 
 $(function () {
-    $("#ex8").slider({
-        tooltip: 'always'
+    $("#interval").slider({
+        formatter: function (value) {
+            return (value === 1) ? value + ' minute' : value + ' minutes';
+        },
+        tooltip: 'always',
+        min: 1,
+        max: 200,
+    scale: 'logarithmic',
+    step: 1
     });
 
     $("#enableNotification").change(function () {
         var isEnabled = $(this).is(":checked");
         chrome.storage.sync.set({ notification: isEnabled, noop });
     });
-  setNotificationCheckBox();
+
+    $("#interval")
+        .on("change",function(obj) {
+            var interval = obj.value.newValue;
+            chrome.storage.sync.set({ interval: interval, noop });
+        });
+    setPreferences();
 });
 
-function setNotificationCheckBox() {
-    chrome.storage.sync.get({ notification: true }, function (data) {
+function setPreferences() {
+    chrome.storage.sync.get({ notification: true, interval: 5 }, function (data) {
         $("#enableNotification").prop("checked", data.notification);
+        $("#interval").slider("setValue", data.interval);
     });
 }
