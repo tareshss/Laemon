@@ -3,11 +3,13 @@
 $(function () {
     $("#interval").slider({
         formatter: function (value) {
-            return (value === 1) ? value + ' minute' : value + ' minutes';
+            if (value === 301)
+                return "Never";
+            return (value === 1) ? value + " minute" : value + " minutes";
         },
         tooltip: 'always',
         min: 1,
-        max: 200,
+        max: 301,
         scale: 'logarithmic',
         step: 1
     });

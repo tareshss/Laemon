@@ -18,18 +18,37 @@
     <div class="container">
         <div class="jumbotron" style="background-color: #F1F1F1; margin-top: 50px">
             <h2>Options</h2>
-            <div class="row" style="padding-left: 25px; padding-top: 25px">
-                <div class="col-md-12">
-                    <form role="form" style="padding-right: 10px">
-                        <label style="padding-right: 10px">Often</label>
-                        <input id="interval" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="20" data-slider-step="1">
-                        <label style="padding-left: 10px">Never</label>
-                        <div class="checkbox">
-                            <label><input id="enableNotification" type="checkbox" value="false"/> Show Notification</label>
-                        </div>                     
-                    </form>
+            <form class="form-horizontal" style="padding-top: 25px">
+                <div class="row" style="padding-left: 25px">
+                    <div class="col-md-12">
+                        <div class="form-group" style="padding-bottom: 25px">
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Interval
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <label class="control-label" style="padding-right: 10px">Often</label>
+                                <input id="interval" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="201" data-slider-step="1">
+                                <label class="control-label" style="padding-left: 10px">Never</label>
+                                <h5><strong> Warning!</strong> using a very low interval or hacking the code (example to make it every 10 secs) could lead to your IP being banned.</h5>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label class="control-label">
+                                    Notifcations
+                                </label>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="checkbox">
+                                    <label><input id="enableNotification" type="checkbox" value="false"/> Show Notification</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </body>
