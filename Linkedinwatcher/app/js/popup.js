@@ -23,12 +23,11 @@ $(function () {
                         // Reasonable fallback.
                         window.open(chrome.runtime.getURL('../html/options.html'));
                     }
-                    backgroundPage.openTab("../html/options.html", true);
                 });
         $("#about")
             .on("click",
                 function () {
-                    backgroundPage.openTab("../html/about.html", true);
+                    window.open(chrome.runtime.getURL('../html/about.html'));
                 });
     });
 });
