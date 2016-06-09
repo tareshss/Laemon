@@ -35,5 +35,8 @@ body {
     .padding-top-10 {
          padding-top: 10px
     }
-}body {
 }
+#intSlider .slider-selection {
+	background: #BABABA;
+}
+

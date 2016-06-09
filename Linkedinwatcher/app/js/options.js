@@ -17,7 +17,9 @@ $(function () {
         min: 1,
         max: 301,
         scale: 'logarithmic',
-        step: 1
+        step: 1,
+        ticks: [1, 15, 301],
+        ticks_labels: ["Often", "Sometimes", "Never"]
     });
 
     $("#enableNotification").change(function () {
