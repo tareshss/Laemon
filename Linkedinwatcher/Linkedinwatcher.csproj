@@ -48,6 +48,7 @@
     <Content Include="app\css\popup.css" />
     <Content Include="app\html\about.html" />
     <Content Include="app\html\options.html" />
+    <Content Include="app\img\Drawing.png" />
     <Content Include="app\img\glyphicons-halflings-white.png" />
     <Content Include="app\img\glyphicons-halflings.png" />
     <Content Include="app\img\icon.png" />
@@ -65,11 +66,12 @@
     <Content Include="app\js\options.js" />
     <Content Include="Properties\build\lib\Ionic.Zip.DLL" />
     <Content Include="Properties\build\lib\MSBuild.ExtensionPack.dll" />
-    <Content Include="screenshots\screenshot.png" />
     <Content Include="index.htm" />
-    <Content Include="Properties\build\ligershark.chrome.targets" />
-    <Content Include="screenshots\readme.txt" />
+    <Content Include="Properties\build\ligershark.chrome.targets">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="app\_locales\en\messages.json" />
+    <Content Include="screenshots\screenshot1.png" />
     <None Include="scripts\_references.js" />
     <None Include="scripts\chrome-api-vsdoc.js" />
   </ItemGroup>
@@ -118,5 +120,4 @@
     <LigerSharkChromeTargetsPath>$(BuildFolder)\ligershark.chrome.targets</LigerSharkChromeTargetsPath>
   </PropertyGroup>
   <Import Project="$(LigerSharkChromeTargetsPath)" Condition="Exists($(LigerSharkChromeTargetsPath))" />
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
