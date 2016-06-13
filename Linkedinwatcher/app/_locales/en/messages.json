@@ -6,6 +6,9 @@
     "message": "Check LinkedIn™ messages securely."
   },
   "name": {
-    "message": "Leamon, a message notifier for LinkedIn™"
+    "message": "Laemon, a message notifier for LinkedIn™"
+  },
+  "shor": {
+    "message": "Laemon"
   }
 }

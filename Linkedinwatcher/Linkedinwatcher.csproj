@@ -48,11 +48,12 @@
     <Content Include="app\css\popup.css" />
     <Content Include="app\html\about.html" />
     <Content Include="app\html\options.html" />
-    <Content Include="app\img\Drawing.png" />
     <Content Include="app\img\glyphicons-halflings-white.png" />
     <Content Include="app\img\glyphicons-halflings.png" />
     <Content Include="app\img\icon.png" />
     <Content Include="app\img\icon_offline.png" />
+    <Content Include="app\img\logo.png" />
+    <Content Include="app\img\zocial-email_128_0_0077b5_none.png" />
     <Content Include="app\img\zocial-email_128_3_0077b5_none.png" />
     <Content Include="app\img\zocial-email_16_3_0077b5_none.png" />
     <Content Include="app\img\zocial-email_48_3_0077b5_none.png" />
@@ -72,6 +73,7 @@
     </Content>
     <Content Include="app\_locales\en\messages.json" />
     <Content Include="screenshots\screenshot1.png" />
+    <Content Include="screenshots\screenshot2.png" />
     <None Include="scripts\_references.js" />
     <None Include="scripts\chrome-api-vsdoc.js" />
   </ItemGroup>

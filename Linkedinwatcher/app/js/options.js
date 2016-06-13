@@ -8,7 +8,7 @@ $(function () {
             else if (value > 59) {
                 var hours = Math.floor(value / 60);
                 var minutes = value % 60;
-                return (minutes !== 0)? hours + " hours and " + minutes + " minutes":  hours + " hours";
+                return (minutes !== 0)? hours + " hours and " + minutes + " minutes":  (hours === 1)?  hours + " hour" : hours + " hours";
             }
                 
             return (value === 1) ? value + " minute" : value + " minutes";
