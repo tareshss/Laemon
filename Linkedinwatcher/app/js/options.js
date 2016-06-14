@@ -30,6 +30,8 @@ $(function () {
     $("#interval")
         .on("slideStop", function (obj) {
             var interval = obj.value;
+            if (interval === 301)
+                interval = 9999;
             chrome.storage.sync.set({ interval: interval });
         });
     setPreferences();
