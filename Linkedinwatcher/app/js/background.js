@@ -97,20 +97,14 @@ function Main() {
         openLinkedIn();
     });
     chrome.storage.onChanged.addListener(function (changes, namespace) {
+        var key;
         for (key in changes) {
-            //            var storageChange = changes[key];
-            if (key === "interval") {
-                clearTimeout(myVar);
-                resetInterval();
-                //change setnewTimeout without check
-
+            if (changes.hasOwnProperty(key)) {
+                if (key === "interval") {
+                    clearTimeout(myVar);
+                    resetInterval();
+                }
             }
-            //            console.log('Storage key "%s" in namespace "%s" changed. ' +
-            //                     'Old value was "%s", new value is "%s".',
-            //                     key,
-            //                     namespace,
-            //                     storageChange.oldValue,
-            //                     storageChange.newValue);
         }
     });
 }
