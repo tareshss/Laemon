@@ -42,3 +42,7 @@ body {
 
 input[type=checkbox] { display:none; } /* hide the checkbox itself */
 
+#enableNotificationLabel {
+    padding-left: 0px;      /* remove bootstrap padding */
+}
+
