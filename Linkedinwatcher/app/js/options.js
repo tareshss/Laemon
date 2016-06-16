@@ -28,9 +28,9 @@ $(function () {
         var classToRemove, classToAdd;
         if (isEnabled) {
             classToRemove = "icon-check-empty";
-            classToAdd = "icon-check";
+            classToAdd = "icon-check laemon-selected";
         } else {
-            classToRemove = "icon-check";
+            classToRemove = "icon-check laemon-selected";
             classToAdd = "icon-check-empty";
         }
         $("#enableNotificationLabel").removeClass(classToRemove).addClass(classToAdd);
@@ -52,9 +52,9 @@ function setPreferences() {
         var classToRemove, classToAdd;
         if (data.notification) {
             classToRemove = "icon-check-empty";
-            classToAdd = "icon-check";
+            classToAdd = "icon-check laemon-selected";
         } else {
-            classToRemove = "icon-check";
+            classToRemove = "icon-check laemon-selected";
             classToAdd = "icon-check-empty";
         }
         $("#enableNotificationLabel").removeClass(classToRemove).addClass(classToAdd);
