@@ -40,3 +40,5 @@ body {
 	background: #BABABA;
 }
 
+input[type=checkbox] { display:none; } /* hide the checkbox itself */
+

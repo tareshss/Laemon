@@ -9,7 +9,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?16705850#fontello') format('svg');
+    src: url('../font/fontello.svg?36749175#fontello') format('svg');
   }
 }
 */
@@ -50,6 +50,8 @@
 }
  
 .icon-cog:before { content: '\e800'; } /* '' */
-.icon-link-ext:before { content: '\e801'; } /* '' */
-.icon-info-circled:before { content: '\e802'; } /* '' */
-.icon-arrows-cw:before { content: '\e803'; } /* '' */
+.icon-check-empty:before { content: '\e801'; } /* '' */
+.icon-check:before { content: '\e802'; } /* '' */
+.icon-link-ext:before { content: '\e803'; } /* '' */
+.icon-info-circled:before { content: '\e804'; } /* '' */
+.icon-arrows-cw:before { content: '\e805'; } /* '' */

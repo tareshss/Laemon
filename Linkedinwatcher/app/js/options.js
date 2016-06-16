@@ -25,6 +25,15 @@ $(function () {
     $("#enableNotification").change(function () {
         var isEnabled = $(this).is(":checked");
         chrome.storage.sync.set({ notification: isEnabled });
+        var classToRemove, classToAdd;
+        if (isEnabled) {
+            classToRemove = "icon-check-empty";
+            classToAdd = "icon-check";
+        } else {
+            classToRemove = "icon-check";
+            classToAdd = "icon-check-empty";
+        }
+        $("#enableNotificationLabel").removeClass(classToRemove).addClass(classToAdd);
     });
 
     $("#interval")
@@ -40,7 +49,16 @@ $(function () {
 function setPreferences() {
     chrome.storage.sync.get({ notification: true, interval: 5 }, function (data) {
         $("#enableNotification").prop("checked", data.notification);
-        //        $("#interval").slider("setValue", data.interval);
+        var classToRemove, classToAdd;
+        if (data.notification) {
+            classToRemove = "icon-check-empty";
+            classToAdd = "icon-check";
+        } else {
+            classToRemove = "icon-check";
+            classToAdd = "icon-check-empty";
+        }
+        $("#enableNotificationLabel").removeClass(classToRemove).addClass(classToAdd);
+
         $("#interval").slider("setValue", data.interval);
     });
 }

@@ -1,5 +1,7 @@
 
 .icon-cog:before { content: '\e800'; } /* '' */
-.icon-link-ext:before { content: '\e801'; } /* '' */
-.icon-info-circled:before { content: '\e802'; } /* '' */
-.icon-arrows-cw:before { content: '\e803'; } /* '' */
+.icon-check-empty:before { content: '\e801'; } /* '' */
+.icon-check:before { content: '\e802'; } /* '' */
+.icon-link-ext:before { content: '\e803'; } /* '' */
+.icon-info-circled:before { content: '\e804'; } /* '' */
+.icon-arrows-cw:before { content: '\e805'; } /* '' */
