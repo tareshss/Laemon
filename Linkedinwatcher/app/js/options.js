@@ -36,6 +36,20 @@ $(function () {
         $("#enableNotificationLabel").removeClass(classToRemove).addClass(classToAdd);
     });
 
+    $("#enableMenu").change(function () {
+        var isEnabled = $(this).is(":checked");
+        chrome.storage.sync.set({ menu: isEnabled });
+        var classToRemove2, classToAdd2;
+        if (isEnabled) {
+            classToRemove2 = "icon-check-empty";
+            classToAdd2 = "icon-check laemon-selected";
+        } else {
+            classToRemove2 = "icon-check laemon-selected";
+            classToAdd2 = "icon-check-empty";
+        }
+        $("#enableMenuLabel").removeClass(classToRemove2).addClass(classToAdd2);
+    });
+
     $("#interval")
         .on("slideStop", function (obj) {
             var interval = obj.value;
@@ -47,7 +61,8 @@ $(function () {
 });
 
 function setPreferences() {
-    chrome.storage.sync.get({ notification: true, interval: 5 }, function (data) {
+    chrome.storage.sync.get({ notification: true, interval: 5, menu: true }, function (data) {
+
         $("#enableNotification").prop("checked", data.notification);
         var classToRemove, classToAdd;
         if (data.notification) {
@@ -58,6 +73,17 @@ function setPreferences() {
             classToAdd = "icon-check-empty";
         }
         $("#enableNotificationLabel").removeClass(classToRemove).addClass(classToAdd);
+
+        $("#enableMenu").prop("checked", data.menu);
+        var classToRemove2, classToAdd2;
+        if (data.menu) {
+            classToRemove2 = "icon-check-empty";
+            classToAdd2 = "icon-check laemon-selected";
+        } else {
+            classToRemove2 = "icon-check laemon-selected";
+            classToAdd2 = "icon-check-empty";
+        }
+        $("#enableMenuLabel").removeClass(classToRemove2).addClass(classToAdd2);
 
         $("#interval").slider("setValue", data.interval);
     });

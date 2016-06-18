@@ -91,6 +91,17 @@ function resetInterval() {
         });
 }
 
+function disableMenu() {
+    chrome.storage.sync.get({ menu: true },
+        function (data) {
+            if (data.menu) {
+                chrome.browserAction.setPopup({ popup: "html/popup.html" });
+            } else {
+                chrome.browserAction.setPopup({ popup: "" });
+            }
+        });
+}
+
 function Main() {
     initialize();
     chrome.notifications.onClicked.addListener(function () {
@@ -104,9 +115,13 @@ function Main() {
                     clearTimeout(myVar);
                     resetInterval();
                 }
+                if (key === "menu") {
+                    disableMenu();
+                }
             }
         }
     });
+    disableMenu();
 }
 
 Main();
