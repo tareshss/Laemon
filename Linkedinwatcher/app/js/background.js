@@ -115,7 +115,8 @@ function singleDoubleClickListener(tab) {
 
         //Clear timer already set in earlier Click
         clearTimeout(timer);
-        console.log("Double click");
+        //Check Messages
+        checkLinkedIn();
 
         //Clear all Clicks
         alreadyClicked = false;
@@ -128,7 +129,8 @@ function singleDoubleClickListener(tab) {
     //Add a timer to detect next click to a sample of 250
     timer = setTimeout(function () {
         //No more clicks so, this is a single click
-        console.log("Single click");
+        //Open Linkedin
+        openLinkedIn();
 
         //Clear all timers
         clearTimeout(timer);
