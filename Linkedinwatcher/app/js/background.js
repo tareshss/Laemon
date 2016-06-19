@@ -108,7 +108,7 @@ function disableMenu() {
         });
 }
 
-function singleDoubleClickListener(tab) {
+function clickListener(tab) {
     //Check for previous click
     if (alreadyClicked) {
         //Yes, Previous Click Detected
@@ -117,7 +117,6 @@ function singleDoubleClickListener(tab) {
         clearTimeout(timer);
         //Check Messages
         checkLinkedIn();
-
         //Clear all Clicks
         alreadyClicked = false;
         return;
@@ -130,8 +129,7 @@ function singleDoubleClickListener(tab) {
     timer = setTimeout(function () {
         //No more clicks so, this is a single click
         //Open Linkedin
-        openLinkedIn();
-
+       openLinkedIn();
         //Clear all timers
         clearTimeout(timer);
 
@@ -146,9 +144,9 @@ function setSingleDoubleClick() {
       function (data) {
           //Add Default Listener provided by chrome.api.*
           if (!data.menu) {
-              chrome.browserAction.onClicked.addListener(singleDoubleClickListener);
+              chrome.browserAction.onClicked.addListener(clickListener);
           } else {
-              chrome.extension.onRequest.removeListener(singleDoubleClickListener);
+              chrome.browserAction.onClicked.removeListener(clickListener);
               clearTimeout(timer);
               alreadyClicked = false;
           }
