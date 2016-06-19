@@ -129,7 +129,7 @@ function clickListener(tab) {
     timer = setTimeout(function () {
         //No more clicks so, this is a single click
         //Open Linkedin
-       openLinkedIn();
+        openLinkedIn();
         //Clear all timers
         clearTimeout(timer);
 
