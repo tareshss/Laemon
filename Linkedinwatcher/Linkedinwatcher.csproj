@@ -72,8 +72,15 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="app\_locales\en\messages.json" />
-    <Content Include="screenshots\screenshot1.png" />
-    <Content Include="screenshots\screenshot2.png" />
+    <Content Include="screenshots\2016-06-26 17_41_32-Clipboard.png" />
+    <Content Include="screenshots\2016-06-26 22_28_44-Laemon Options.png" />
+    <Content Include="screenshots\2016-06-26 22_28_44-screenshot1 - Copy.png" />
+    <Content Include="screenshots\2016-06-26 22_28_44-screenshot1.png" />
+    <Content Include="screenshots\2016_06_19_13_02_39_scresnshot2.png" />
+    <Content Include="screenshots\2016_06_19_22_09_52_scresnshot3.png" />
+    <Content Include="screenshots\2016_06_19_22_10_38_scresnshot4 - Copy.png" />
+    <Content Include="screenshots\2016_06_19_22_10_38_scresnshot4.png" />
+    <Content Include="screenshots\PromotionalTileSmall440x280.png" />
     <None Include="scripts\_references.js" />
     <None Include="scripts\chrome-api-vsdoc.js" />
   </ItemGroup>

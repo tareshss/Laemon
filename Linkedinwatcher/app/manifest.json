@@ -29,6 +29,6 @@
     "storage"
   ],
   "short_name": "__MSG_shor__",
-  "version": "0.0.0.4",
+  "version": "0.0.0.5",
   "web_accessible_resources": [ "*" ]
 }
