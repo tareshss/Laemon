@@ -3,12 +3,15 @@
     "message": "Taresh Sandhu"
   },
   "description": {
-    "message": "Get notified of Important LinkedIn messages"
+    "message": "Get notified of Important LinkedIn™ messages"
   },
   "name": {
-    "message": "Laemon, Never miss a LinkedIn™ Message"
+    "message": "Laemon, Never miss a LinkedIn Message"
   },
   "shor": {
     "message": "Laemon"
+  },
+  "notification": {
+    "message": "Laemon, Never miss a LinkedIn™ Message"
   }
 }

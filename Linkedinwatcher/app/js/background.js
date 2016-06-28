@@ -66,7 +66,7 @@ function showUserMessage(result) {
     var addPlural = (result === "1") ? "" : "s";
     var opt = {
         type: "basic",
-        title: chrome.i18n.getMessage("name"),
+        title: chrome.i18n.getMessage("notification"),
         message: "You have " + result + " New Message" + addPlural,
         iconUrl: notificationIcon,
         priority: 0
